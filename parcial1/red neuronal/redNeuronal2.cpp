@@ -4,7 +4,7 @@
 #include<cstdlib>
 using namespace std;
 
-// Funci髇 para convertir los valores en 1 o -1
+// Funci贸n para convertir los valores en 1 o -1 recibe un vector de tama帽o 81 con numeros al azar 
 void convertir(double a[], int resultado[], int size) {
     for (int i = 0; i < size; ++i) {
         if (a[i] > 0) {
@@ -15,14 +15,14 @@ void convertir(double a[], int resultado[], int size) {
     }
 }
 
-// Funci髇 para leer una matriz desde un archivo txt
+// Funci贸n para leer una matriz desde un archivo txt
 void leerMatriz(const string& nombreArchivo, int matriz[9][9]) {
     ifstream archivo(nombreArchivo.c_str());
     if (!archivo.is_open()) {
         cerr << "No se pudo abrir el archivo: " << nombreArchivo << endl;
         exit(1);
     }
-    
+    //iterar a traves de la matriz
     for (int i = 0; i < 9; ++i) {
         for (int j = 0; j < 9; ++j) {
             archivo >> matriz[i][j];
@@ -32,7 +32,7 @@ void leerMatriz(const string& nombreArchivo, int matriz[9][9]) {
     archivo.close();
 }
 
-// Funci髇 para convertir una matriz 9x9 en un vector de 81 elementos
+// Funci贸n para convertir una matriz 9x9 en un vector de 81 elementos
 void convertirMatrizEnVector(int matriz[9][9], int vector[81]) {
     int index = 0;
     for (int i = 0; i < 9; ++i) {
@@ -101,7 +101,7 @@ int main() {
             }
         }
 
-        // Convertir vec2 a vec1 usando la funci髇 convertir
+        // Convertir vec2 a vec1 usando la funci贸n convertir
         int temp[81];
         convertir(vec2, temp, 81);
 
@@ -122,7 +122,7 @@ int main() {
     }
 
     // Mostrar el vector resultado
-    cout << "La figura m醩 parecida es:" << endl;
+    cout << "La figura m谩s parecida es:" << endl;
     for (int i = 0; i < 81; ++i) {
         cout << vec1[i] << " ";
         if ((i + 1) % 9 == 0) {
