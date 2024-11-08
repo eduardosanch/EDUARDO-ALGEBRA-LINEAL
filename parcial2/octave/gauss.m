@@ -1,33 +1,53 @@
+% Inicializar matrices A y B
+A = zeros(2, 2);
+B = zeros(2, 1);
 
-disp('Introduce los valores de la matriz (3 columnas y 2 filas):');
-
-Ab = zeros(2, 3);
+% Ingresar los elementos de la matriz A
 for i = 1:2
-    for j = 1:3
-        Ab(i, j) = input(['Introduce el valor de Ab[', num2str(i), ',', num2str(j), ']: ']);
+    for j = 1:2
+        A(i, j) = input("Ingrese lod elementos de A");
     end
 end
 
-% Paso 1: Eliminación de Gauss
+% Ingresar los elementos del vector B
 for i = 1:2
-    if Ab(i,i) != 1
-        factor = Ab(i,i);
-        Ab(i,:) = Ab(i,:) / factor; 
-    end
+    B(i, 1) = input("Ingrese los elementos de B");
+end
+
+% Guardar la matriz original para la comprobación
+A_original = A;
+B_original = B;
+
+% Paso 1: Comprobación si el sistema tiene solución
+determinanteA = A(1, 1) * A(2, 2) - A(1, 2) * A(2, 1);
+
+if determinanteA == 0
+    disp("No hay solución única por el método de Gauss.");
+else
+    % Paso 2: Eliminar la primera variable de la segunda fila
+    factor = A(2, 1) / A(1, 1);
     
-    for j = i+1:2
-        factor = Ab(j,i);
-        Ab(j,:) = Ab(j,:) - factor * Ab(i,:);
-    end
+    % Actualizar la segunda fila de A y B usando el factor calculado
+    A(2, :) = A(2, :) - factor * A(1, :);
+    B(2) = B(2) - factor * B(1);
+
+    % Paso 3: Sustitución hacia atrás para encontrar las soluciones
+    X = zeros(2, 1);
+    X(2) = B(2) / A(2, 2);  % Resolver para X2
+    X(1) = (B(1) - A(1, 2) * X(2)) / A(1, 1);  % Resolver para X1
+
+    % Paso 4: Comprobación de la solución utilizando la matriz original
+    comprobarB = A_original * X;
+
+    % Mostrar resultados finales
+    disp("Matriz A original:");
+    disp(A_original);
+    disp("Vector B original:");
+    disp(B_original);
+    disp("Solución X:");
+    disp(X);
+    disp("Comprobación A_original * X:");
+    disp(comprobarB);
 end
 
-% Paso 2: Sustitución hacia atrás
-x = zeros(2, 1);
-x(2) = Ab(2,3) / Ab(2,2);  % Resolver la última variable
-
-x(1) = (Ab(1,3) - Ab(1,2) * x(2)) / Ab(1,1);  % Resolver la primera variable
-
-% Mostrar la solución
-disp('La solución es:');
-disp(x);
 
