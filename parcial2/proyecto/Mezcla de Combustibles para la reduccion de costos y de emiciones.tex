@@ -1,0 +1,295 @@
+\documentclass[]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+\usepackage{array}
+\usepackage{amsmath}
+
+\title{Análisis de Mezcla de Combustibles para Optimización de Costos y Reducción de Emisiones}
+\author{}
+\date{}
+
+\begin{document}
+	
+	\maketitle
+	
+	\section*{Introducción}
+	El uso de combustibles en la industria y el transporte ha sido fundamental para el desarrollo económico a lo largo de la historia. Sin embargo, el impacto ambiental causado por las emisiones de gases contaminantes y el aumento de los costos energéticos han motivado a las empresas a buscar soluciones más sostenibles y eficientes. La mezcla de diferentes tipos de combustibles, como la gasolina, el diésel y los biocombustibles, se ha convertido en una estrategia prometedora para optimizar el consumo energético y reducir el impacto ambiental.
+	
+	Este estudio tiene como objetivo analizar cómo la combinación de varios combustibles puede cumplir con objetivos específicos, como minimizar costos, maximizar la eficiencia energética y reducir las emisiones contaminantes. Utilizando un enfoque basado en \textbf{sistemas de ecuaciones lineales}, exploraremos cómo determinar la mezcla óptima de combustibles para alcanzar un equilibrio entre costo, eficiencia y sostenibilidad.
+	
+	\section*{Desarrollo}
+	
+	\subsection*{1. Contexto y Problemática}
+	Las empresas que dependen del uso intensivo de combustibles, como las compañías de transporte, las fábricas y las plantas de generación de energía, enfrentan desafíos en la gestión de costos operativos y en el cumplimiento de normativas ambientales cada vez más estrictas. El precio de los combustibles fósiles fluctúa de acuerdo con las condiciones del mercado global, mientras que el uso de biocombustibles puede contribuir a reducir las emisiones de dióxido de carbono.
+	
+	En este escenario, las empresas se enfrentan a la siguiente pregunta: \textbf{¿Cómo pueden combinar diferentes fuentes de energía de manera eficiente para reducir costos y minimizar el impacto ambiental sin sacrificar el rendimiento?}
+	
+	\subsection*{2. Definición del Problema}
+	Supongamos que una empresa de transporte desea utilizar una mezcla de tres tipos de combustibles para abastecer su flota de vehículos:
+	
+	\begin{itemize}
+		\item \textbf{Gasolina} (Combustible A)
+		\item \textbf{Diésel} (Combustible B)
+		\item \textbf{Biocombustible} (Combustible C)
+	\end{itemize}
+	
+	El objetivo es encontrar la cantidad óptima de cada tipo de combustible para cumplir con los siguientes requisitos:
+	\begin{itemize}
+		\item \textbf{Contenido energético mínimo}: El vehículo necesita al menos 800 unidades de energía para funcionar de manera óptima.
+		\item \textbf{Límite de emisiones de CO2}: Las emisiones no deben exceder las 500 unidades.
+		\item \textbf{Minimizar el costo total de la mezcla}: Se tiene un presupuesto limitado.
+	\end{itemize}
+	
+	\subsection*{3. Datos del Problema y Planteamiento de las variables}
+	A continuación, se presenta la información relevante sobre los combustibles disponibles:
+	
+	\begin{center}
+		\begin{tabular}{|c|c|c|c|c|}
+			\hline
+			Propiedad & Gasolina (A) & Diésel (B) & Biocombustible (C) \\
+			\hline
+			Energía (unidades/Litro) & 10 & 12 & 8 \\
+			\hline
+			Emisiones de CO2 (unidades/Litro) & 7 & 5 & 2 \\
+			\hline
+			Costo (\$/Litro) & 3 & 4 & 6 \\
+			\hline
+		\end{tabular}
+	\end{center}
+	
+	\subsection*{4. Sistema de Ecuaciones}
+	Queremos encontrar las cantidades \textbf{x}, \textbf{y} y \textbf{z} que representen la cantidad en litros de gasolina, diésel y biocombustible, respectivamente, que cumplan con las siguientes ecuaciones:
+	
+	\begin{itemize}
+		\item \textbf{1. Contenido energético mínimo:} 10x + 12y + 8z $\geq$ 800
+		\item \textbf{2. Límite de emisiones de CO2:} 7x + 5y + 2z $\leq$ 500
+		\item \textbf{3. Minimizar el costo total:} Costo = 3x + 4y + 6z
+	\end{itemize}
+	
+	\subsection*{5. Sistema de Ecuaciones Lineales}
+	Convertimos las restricciones en un sistema de ecuaciones lineales para simplificar el análisis y resolverlo. El sistema es el siguiente:
+	
+	\[ 
+	\begin{cases}
+		10x + 12y + 8z = 800 \\
+		7x + 5y + 2z = 500 \\
+		3x + 4y + 6z = 600
+	\end{cases}
+	\]
+	
+	El sistema puede representarse mediante la matriz aumentada:
+	
+	\[
+	\begin{bmatrix}
+		10 & 12 & 8 & | & 800 \\
+		7 & 5 & 2 & | & 500 \\
+		3 & 4 & 6 & | & 600
+	\end{bmatrix}
+	\]
+	
+	\subsection*{6. Resolución del Sistema con el Método de la Matriz Inversa}
+	Para resolver el sistema utilizando el método de la matriz inversa, planteamos el sistema de ecuaciones de la siguiente manera:
+	
+	\[
+	\begin{bmatrix}
+		10 & 12 & 8 \\
+		7 & 5 & 2 \\
+		3 & 4 & 6
+	\end{bmatrix}
+	\begin{bmatrix}
+		x \\
+		y \\
+		z
+	\end{bmatrix}
+	=
+	\begin{bmatrix}
+		800 \\
+		500 \\
+		600
+	\end{bmatrix}
+	\]
+	
+	Ahora vamos a calcular la matriz inversa de la matriz de coeficientes \(\begin{bmatrix} 10 & 12 & 8 \\ 7 & 5 & 2 \\ 3 & 4 & 6 \end{bmatrix}\).
+	
+	\subsubsection*{Paso 1: Cálculo de la matriz inversa}
+	La fórmula para la matriz inversa de una matriz 3x3 es:
+	\[
+	A^{-1} = \frac{1}{\text{det}(A)} \cdot \text{adj}(A)
+	\]
+	donde \(\text{det}(A)\) es el determinante de la matriz \(A\) y \(\text{adj}(A)\) es la matriz adjunta de \(A\).
+	
+	Primero, calculamos el determinante de la matriz \(A\):
+	\[
+	\text{det}(A) = 10 \cdot (5 \cdot 6 - 4 \cdot 2) - 12 \cdot (7 \cdot 6 - 3 \cdot 2) + 8 \cdot (7 \cdot 4 - 3 \cdot 5)
+	\]
+	\[
+	\text{det}(A) = 10 \cdot (30 - 8) - 12 \cdot (42 - 6) + 8 \cdot (28 - 15)
+	\]
+	\[
+	\text{det}(A) = 10 \cdot 22 - 12 \cdot 36 + 8 \cdot 13
+	\]
+	\[
+	\text{det}(A) = 220 - 432 + 104 = -108
+	\]
+	
+	Ahora, calculamos la matriz adjunta de \(A\). La adjunta de una matriz 3x3 es la transpuesta de la matriz de los cofactores. Los cofactores se calculan como el determinante de las submatrices 2x2 formadas por eliminar la fila y la columna correspondiente a cada elemento de la matriz.
+
+		
+	\begin{figure}[!ht]
+		\centering
+		\includegraphics[width=10cm]{adjunta1.png}
+		\includegraphics[width=10cm]{adjunta2.png}
+	\end{figure}
+	Finalmente, se multiplica la matriz adjunta por \(\frac{1}{\text{det}(A)}\) para obtener la matriz inversa.
+	
+	\subsubsection*{Paso 2: Multiplicación de la matriz inversa ya transpuesta por el vector de resultados}
+	Una vez que tenemos la matriz inversa, la solución del sistema es:
+	\[
+	\begin{bmatrix}
+		x \\
+		y \\
+		z
+	\end{bmatrix}
+	=
+	\begin{bmatrix}
+		-0.203703703703704 & 0.37037037037037 & 0.148148148148148 \\
+		0.333333333333333 & -0.333333333333333 & -0.333333333333333 \\
+		-0.12037037037037 & 0.037037037037037 & 0.314814814814815
+	\end{bmatrix}
+	\begin{bmatrix}
+		800 \\
+		500 \\
+		600
+	\end{bmatrix}
+	\]
+	Realizando la multiplicación de la matriz inversa por el vector de resultados, obtenemos la solución:
+	
+	\[
+	\begin{bmatrix}
+		x \\
+		y \\
+		z
+	\end{bmatrix}
+	=
+	\begin{bmatrix}
+		40 \\
+		30 \\
+		88
+	\end{bmatrix}
+	\]
+	
+	Esto confirma que la mezcla óptima es:
+	\[
+	x = 40, \quad y = 30, \quad z = 88
+	\]
+	
+	\subsection*{7. Resolución del Sistema con el Método de Gauss-Jordan}
+	Para resolver el sistema de ecuaciones usando el método de Gauss-Jordan, seguimos los siguientes pasos. Primero, la matriz aumentada es:
+	
+	\[
+	\begin{bmatrix}
+		10 & 12 & 8 & | & 800 \\
+		7 & 5 & 2 & | & 500 \\
+		3 & 4 & 6 & | & 600
+	\end{bmatrix}
+	\]
+	
+	1. Dividir la primera fila por 10 para hacer que el primer coeficiente de la primera columna sea 1:
+	
+	\[
+	\begin{bmatrix}
+		1 & 1.2 & 0.8 & | & 80 \\
+		7 & 5 & 2 & | & 500 \\
+		3 & 4 & 6 & | & 600
+	\end{bmatrix}
+	\]
+	
+	2. Restar 7 veces la primera fila de la segunda fila para hacer que el primer elemento de la segunda fila sea 0:
+	
+	\[
+	\begin{bmatrix}
+		1 & 1.2 & 0.8 & | & 80 \\
+		0 & -3.4 & -3.6 & | & -60 \\
+		3 & 4 & 6 & | & 600
+	\end{bmatrix}
+	\]
+	
+	3. Restar 3 veces la primera fila de la tercera fila para hacer que el primer elemento de la tercera fila sea 0:
+	
+	\[
+	\begin{bmatrix}
+		1 & 1.2 & 0.8 & | & 80 \\
+		0 & -3.4 & -3.6 & | & -60 \\
+		0 & 0.4 & 4.4 & | & 360
+	\end{bmatrix}
+	\]
+	
+	4. Dividir la segunda fila por -3.4 para que el coeficiente de \(y\) en la segunda fila sea 1:
+	
+	\[
+	\begin{bmatrix}
+		1 & 1.2 & 0.8 & | & 80 \\
+		0 & 1 & 1.06 & | & 17.65 \\
+		0 & 0.4 & 4.4 & | & 360
+	\end{bmatrix}
+	\]
+	
+	5. Restar 1.2 veces la segunda fila de la primera fila para hacer que el coeficiente de \(y\) en la primera fila sea 0:
+	
+	\[
+	\begin{bmatrix}
+		1 & 0 & -0.28 & | & 63.12 \\
+		0 & 1 & 1.06 & | & 17.65 \\
+		0 & 0.4 & 4.4 & | & 360
+	\end{bmatrix}
+	\]
+	
+	6. Restar 0.4 veces la segunda fila de la tercera fila para hacer que el coeficiente de \(y\) en la tercera fila sea 0:
+	
+	\[
+	\begin{bmatrix}
+		1 & 0 & -0.28 & | & 63.12 \\
+		0 & 1 & 1.06 & | & 17.65 \\
+		0 & 0 & 4.0 & | & 352.0
+	\end{bmatrix}
+	\]
+	
+	7. Dividir la tercera fila por 4 para que el coeficiente de \(z\) sea 1:
+	
+	\[
+	\begin{bmatrix}
+		1 & 0 & -0.28 & | & 63.12 \\
+		0 & 1 & 1.06 & | & 17.65 \\
+		0 & 0 & 1 & | & 88.0
+	\end{bmatrix}
+	\]
+	
+	8. Finalmente, sustituir la tercera fila en la primera y segunda fila para eliminar el coeficiente de \(z\) en esas filas. Esto da como resultado la matriz final:
+	
+	\[
+	\begin{bmatrix}
+		1 & 0 & 0 & | & 40 \\
+		0 & 1 & 0 & | & 30 \\
+		0 & 0 & 1 & | & 88
+	\end{bmatrix}
+	\]
+	
+	Esto significa que la solución es:
+	\[
+	x = 40 \text{ litros de Gasolina}, \quad y = 30 \text{ litros de Diésel}, \quad z = 88 \text{ litros de Biocombustible}.
+	\]
+	
+	\subsection*{8. Interpretación de los Resultados}
+	La solución nos indica que la mezcla óptima para cumplir con los requisitos de energía y emisiones al menor costo posible es:
+	\begin{center}
+		\textbf{40 litros de Gasolina, 30 litros de Diésel, y 88 litros de Biocombustible.}
+	\end{center}
+	
+	\section*{Conclusión}
+	El análisis de la mezcla de combustibles utilizando un enfoque basado en sistemas de ecuaciones y optimización lineal demuestra ser una herramienta poderosa para las empresas que buscan reducir costos operativos y minimizar su impacto ambiental. Aunque los biocombustibles son generalmente más costosos, su menor nivel de emisiones puede hacerlos más atractivos en escenarios donde las regulaciones ambientales son estrictas.
+	
+	La implementación de estrategias de mezcla de combustibles no solo permite a las empresas cumplir con las regulaciones, sino que también contribuye a una transición hacia fuentes de energía más sostenibles. Sin embargo, es fundamental realizar análisis detallados y simulaciones para ajustar las proporciones en función de las variaciones en los costos y la disponibilidad de combustibles en el mercado.
+	
+\end{document}
+
+
