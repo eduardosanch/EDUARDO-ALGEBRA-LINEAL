@@ -48,9 +48,9 @@
 			\hline
 			Propiedad & Gasolina (A) & Diésel (B) & Biocombustible (C) \\
 			\hline
-			Energía (unidades/Litro) & 10 & 12 & 8 \\
+			Energía (unidades/Litro) & 10 & 1 & 8 \\
 			\hline
-			Emisiones de CO2 (unidades/Litro) & 7 & 5 & 2 \\
+			Emisiones de CO2 (unidades/Litro) & 7 & 2 & 2 \\
 			\hline
 			Costo (\$/Litro) & 3 & 4 & 6 \\
 			\hline
@@ -61,8 +61,8 @@
 	Queremos encontrar las cantidades \textbf{x}, \textbf{y} y \textbf{z} que representen la cantidad en litros de gasolina, diésel y biocombustible, respectivamente, que cumplan con las siguientes ecuaciones:
 	
 	\begin{itemize}
-		\item \textbf{1. Contenido energético mínimo:} 10x + 12y + 8z $\geq$ 800
-		\item \textbf{2. Límite de emisiones de CO2:} 7x + 5y + 2z $\leq$ 500
+		\item \textbf{1. Contenido energético mínimo:} 10x + 1y + 8z $\geq$ 800
+		\item \textbf{2. Límite de emisiones de CO2:} 7x + 2y + 2z $\leq$ 500
 		\item \textbf{3. Minimizar el costo total:} Costo = 3x + 4y + 6z
 	\end{itemize}
 	
@@ -71,8 +71,8 @@
 	
 	\[ 
 	\begin{cases}
-		10x + 12y + 8z = 800 \\
-		7x + 5y + 2z = 500 \\
+		10x + 1y + 8z = 800 \\
+		7x + 2y + 2z = 500 \\
 		3x + 4y + 6z = 600
 	\end{cases}
 	\]
@@ -81,8 +81,8 @@
 	
 	\[
 	\begin{bmatrix}
-		10 & 12 & 8 & | & 800 \\
-		7 & 5 & 2 & | & 500 \\
+		10 & 1 & 8 & | & 800 \\
+		7 & 2 & 2 & | & 500 \\
 		3 & 4 & 6 & | & 600
 	\end{bmatrix}
 	\]
@@ -92,8 +92,8 @@
 	
 	\[
 	\begin{bmatrix}
-		10 & 12 & 8 \\
-		7 & 5 & 2 \\
+		10 & 1 & 8 \\
+		7 & 2 & 2 \\
 		3 & 4 & 6
 	\end{bmatrix}
 	\begin{bmatrix}
@@ -109,37 +109,52 @@
 	\end{bmatrix}
 	\]
 	
-	Ahora vamos a calcular la matriz inversa de la matriz de coeficientes \(\begin{bmatrix} 10 & 12 & 8 \\ 7 & 5 & 2 \\ 3 & 4 & 6 \end{bmatrix}\).
+	Ahora vamos a calcular la matriz inversa de la matriz de coeficientes:
+	
+	\[
+	\begin{bmatrix}
+		10 & 1 & 8 \\
+		7 & 2 & 2 \\
+		3 & 4 & 6
+	\end{bmatrix}
+	\]
 	
 	\subsubsection*{Paso 1: Cálculo de la matriz inversa}
 	La fórmula para la matriz inversa de una matriz 3x3 es:
+	
 	\[
 	A^{-1} = \frac{1}{\text{det}(A)} \cdot \text{adj}(A)
 	\]
+	
 	donde \(\text{det}(A)\) es el determinante de la matriz \(A\) y \(\text{adj}(A)\) es la matriz adjunta de \(A\).
 	
 	Primero, calculamos el determinante de la matriz \(A\):
+	
 	\[
-	\text{det}(A) = 10 \cdot (5 \cdot 6 - 4 \cdot 2) - 12 \cdot (7 \cdot 6 - 3 \cdot 2) + 8 \cdot (7 \cdot 4 - 3 \cdot 5)
-	\]
-	\[
-	\text{det}(A) = 10 \cdot (30 - 8) - 12 \cdot (42 - 6) + 8 \cdot (28 - 15)
-	\]
-	\[
-	\text{det}(A) = 10 \cdot 22 - 12 \cdot 36 + 8 \cdot 13
-	\]
-	\[
-	\text{det}(A) = 220 - 432 + 104 = -108
+	\text{det}(A) = 10 \cdot (2 \cdot 6 - 4 \cdot 2) - 1 \cdot (7 \cdot 6 - 3 \cdot 2) + 8 \cdot (7 \cdot 4 - 3 \cdot 5)
 	\]
 	
+	\[
+	\text{det}(A) = 10 \cdot (12 - 8) - 1 \cdot (42 - 6) + 8 \cdot (28 - 15)
+	\]
+	
+	\[
+	\text{det}(A) = 10 \cdot 4 - 1 \cdot 36 + 8 \cdot 13
+	\]
+	
+	\[
+	\text{det}(A) = 40 - 36 + 104 = 108
+	\]
+	
+	
 	Ahora, calculamos la matriz adjunta de \(A\). La adjunta de una matriz 3x3 es la transpuesta de la matriz de los cofactores. Los cofactores se calculan como el determinante de las submatrices 2x2 formadas por eliminar la fila y la columna correspondiente a cada elemento de la matriz.
-
-		
-	\begin{figure}[!ht]
-		\centering
-		\includegraphics[width=10cm]{adjunta1.png}
-		\includegraphics[width=10cm]{adjunta2.png}
-	\end{figure}
+     		
+     \begin{figure}[!ht]
+     	\centering
+     	\includegraphics[width=7cm]{adjunta1.png}
+     	\includegraphics[width=7cm]{adjunta2.png}
+     \end{figure}
+     
 	Finalmente, se multiplica la matriz adjunta por \(\frac{1}{\text{det}(A)}\) para obtener la matriz inversa.
 	
 	\subsubsection*{Paso 2: Multiplicación de la matriz inversa ya transpuesta por el vector de resultados}
@@ -172,117 +187,150 @@
 	\end{bmatrix}
 	=
 	\begin{bmatrix}
-		40 \\
-		30 \\
-		88
+		43.333 \\
+		60.00 \\
+		38.333
 	\end{bmatrix}
 	\]
 	
 	Esto confirma que la mezcla óptima es:
 	\[
-	x = 40, \quad y = 30, \quad z = 88
+	x = 43.333, \quad y = 60.00, \quad z = 38.333
 	\]
 	
 	\subsection*{7. Resolución del Sistema con el Método de Gauss-Jordan}
 	Para resolver el sistema de ecuaciones usando el método de Gauss-Jordan, seguimos los siguientes pasos. Primero, la matriz aumentada es:
 	
-	\[
-	\begin{bmatrix}
-		10 & 12 & 8 & | & 800 \\
-		7 & 5 & 2 & | & 500 \\
-		3 & 4 & 6 & | & 600
-	\end{bmatrix}
-	\]
-	
-	1. Dividir la primera fila por 10 para hacer que el primer coeficiente de la primera columna sea 1:
-	
-	\[
-	\begin{bmatrix}
-		1 & 1.2 & 0.8 & | & 80 \\
-		7 & 5 & 2 & | & 500 \\
-		3 & 4 & 6 & | & 600
-	\end{bmatrix}
-	\]
-	
-	2. Restar 7 veces la primera fila de la segunda fila para hacer que el primer elemento de la segunda fila sea 0:
-	
-	\[
-	\begin{bmatrix}
-		1 & 1.2 & 0.8 & | & 80 \\
-		0 & -3.4 & -3.6 & | & -60 \\
-		3 & 4 & 6 & | & 600
-	\end{bmatrix}
-	\]
-	
-	3. Restar 3 veces la primera fila de la tercera fila para hacer que el primer elemento de la tercera fila sea 0:
-	
-	\[
-	\begin{bmatrix}
-		1 & 1.2 & 0.8 & | & 80 \\
-		0 & -3.4 & -3.6 & | & -60 \\
-		0 & 0.4 & 4.4 & | & 360
-	\end{bmatrix}
-	\]
-	
-	4. Dividir la segunda fila por -3.4 para que el coeficiente de \(y\) en la segunda fila sea 1:
-	
-	\[
-	\begin{bmatrix}
-		1 & 1.2 & 0.8 & | & 80 \\
-		0 & 1 & 1.06 & | & 17.65 \\
-		0 & 0.4 & 4.4 & | & 360
-	\end{bmatrix}
-	\]
-	
-	5. Restar 1.2 veces la segunda fila de la primera fila para hacer que el coeficiente de \(y\) en la primera fila sea 0:
-	
-	\[
-	\begin{bmatrix}
-		1 & 0 & -0.28 & | & 63.12 \\
-		0 & 1 & 1.06 & | & 17.65 \\
-		0 & 0.4 & 4.4 & | & 360
-	\end{bmatrix}
-	\]
-	
-	6. Restar 0.4 veces la segunda fila de la tercera fila para hacer que el coeficiente de \(y\) en la tercera fila sea 0:
-	
-	\[
-	\begin{bmatrix}
-		1 & 0 & -0.28 & | & 63.12 \\
-		0 & 1 & 1.06 & | & 17.65 \\
-		0 & 0 & 4.0 & | & 352.0
-	\end{bmatrix}
-	\]
-	
-	7. Dividir la tercera fila por 4 para que el coeficiente de \(z\) sea 1:
-	
-	\[
-	\begin{bmatrix}
-		1 & 0 & -0.28 & | & 63.12 \\
-		0 & 1 & 1.06 & | & 17.65 \\
-		0 & 0 & 1 & | & 88.0
-	\end{bmatrix}
-	\]
-	
-	8. Finalmente, sustituir la tercera fila en la primera y segunda fila para eliminar el coeficiente de \(z\) en esas filas. Esto da como resultado la matriz final:
-	
-	\[
-	\begin{bmatrix}
-		1 & 0 & 0 & | & 40 \\
-		0 & 1 & 0 & | & 30 \\
-		0 & 0 & 1 & | & 88
-	\end{bmatrix}
-	\]
-	
-	Esto significa que la solución es:
-	\[
-	x = 40 \text{ litros de Gasolina}, \quad y = 30 \text{ litros de Diésel}, \quad z = 88 \text{ litros de Biocombustible}.
-	\]
+\[
+\begin{bmatrix}
+	10 & 1 & 8 & | & 800 \\
+	7 & 2 & 2 & | & 500 \\
+	3 & 4 & 6 & | & 600
+\end{bmatrix}
+\]
+
+\section*{Resolución paso a paso}
+
+\subsection*{Paso 1: Normalizar el primer pivote (\(a_{11}\))}
+
+Dividimos la primera fila entre \(10\):
+
+\[
+R_1 \rightarrow \frac{R_1}{10}
+\]
+
+\[
+\begin{bmatrix}
+	1 & 0.1 & 0.8 & | & 80 \\
+	7 & 2 & 2 & | & 500 \\
+	3 & 4 & 6 & | & 600
+\end{bmatrix}
+\]
+
+\subsection*{Paso 2: Hacer ceros debajo del primer pivote (\(a_{21}\) y \(a_{31}\))}
+
+Usamos \(R_1\) para eliminar los valores en la primera columna de \(R_2\) y \(R_3\):
+\[
+R_2 \rightarrow R_2 - 7 \cdot R_1
+\]
+\[
+R_3 \rightarrow R_3 - 3 \cdot R_1
+\]
+
+El resultado es:
+
+\[
+\begin{bmatrix}
+	1 & 0.1 & 0.8 & | & 80 \\
+	0 & 1.3 & -3.6 & | & -160 \\
+	0 & 3.7 & 3.4 & | & 360
+\end{bmatrix}
+\]
+
+\subsection*{Paso 3: Normalizar el segundo pivote (\(a_{22}\))}
+
+Dividimos la segunda fila entre \(1.3\):
+
+\[
+R_2 \rightarrow \frac{R_2}{1.3}
+\]
+
+\[
+\begin{bmatrix}
+	1 & 0.1 & 0.8 & | & 80 \\
+	0 & 1 & -2.769 & | & -123.077 \\
+	0 & 3.7 & 3.4 & | & 360
+\end{bmatrix}
+\]
+
+\subsection*{Paso 4: Hacer ceros arriba y abajo del segundo pivote (\(a_{12}\) y \(a_{32}\))}
+
+Usamos \(R_2\) para eliminar los valores en la segunda columna de \(R_1\) y \(R_3\):
+\[
+R_1 \rightarrow R_1 - 0.1 \cdot R_2
+\]
+\[
+R_3 \rightarrow R_3 - 3.7 \cdot R_2
+\]
+
+El resultado es:
+
+\[
+\begin{bmatrix}
+	1 & 0 & 1.053 & | & 92.308 \\
+	0 & 1 & -2.769 & | & -123.077 \\
+	0 & 0 & 13.786 & | & 851.538
+\end{bmatrix}
+\]
+
+\subsection*{Paso 5: Normalizar el tercer pivote (\(a_{33}\))}
+
+Dividimos la tercera fila entre \(13.786\):
+
+\[
+R_3 \rightarrow \frac{R_3}{13.786}
+\]
+
+\[
+\begin{bmatrix}
+	1 & 0 & 1.053 & | & 92.308 \\
+	0 & 1 & -2.769 & | & -123.077 \\
+	0 & 0 & 1 & | & 61.823
+\end{bmatrix}
+\]
+
+\subsection*{Paso 6: Hacer ceros arriba del tercer pivote (\(a_{13}\) y \(a_{23}\))}
+
+Usamos \(R_3\) para eliminar los valores en la tercera columna de \(R_1\) y \(R_2\):
+\[
+R_1 \rightarrow R_1 - 1.053 \cdot R_3
+\]
+\[
+R_2 \rightarrow R_2 + 2.769 \cdot R_3
+\]
+
+El resultado final es:
+
+\[
+\begin{bmatrix}
+	1 & 0 & 0 & | & 43.333 \\
+	0 & 1 & 0 & | & 60.000 \\
+	0 & 0 & 1 & | & 38.333
+\end{bmatrix}
+\]
+
+\section*{Solución del sistema}
+
+La solución del sistema es:
+
+\[
+x = 43.333, \quad y = 60.00, \quad z = 38.333
+\]
 	
 	\subsection*{8. Interpretación de los Resultados}
 	La solución nos indica que la mezcla óptima para cumplir con los requisitos de energía y emisiones al menor costo posible es:
 	\begin{center}
-		\textbf{40 litros de Gasolina, 30 litros de Diésel, y 88 litros de Biocombustible.}
+		\textbf{43.333 litros de Gasolina, 60.00 litros de Diésel, y 38.333 litros de Biocombustible.}
 	\end{center}
 	
 	\section*{Conclusión}

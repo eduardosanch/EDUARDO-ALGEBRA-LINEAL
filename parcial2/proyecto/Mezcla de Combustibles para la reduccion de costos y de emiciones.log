@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 24.1) (preloaded format=pdflatex 2024.11.11)  12 NOV 2024 21:46
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 24.1) (preloaded format=pdflatex 2024.11.11)  19 NOV 2024 23:41
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -226,48 +226,29 @@ Overfull \hbox (47.79239pt too wide) in paragraph at lines 47--58
  [] 
  []
 
-[2]
-Overfull \hbox (22.25061pt too wide) in paragraph at lines 112--113
-[]\OT1/cmr/m/n/10 Ahora va-mos a cal-cu-lar la ma-triz in-versa de la ma-triz d
-e co-e-fi-cientes $[]$. 
- []
-
-<adjunta1.png, id=14, 273.27094pt x 277.035pt>
+[2] [3]
+<adjunta1.png, id=21, 273.27094pt x 304.88907pt>
 File: adjunta1.png Graphic file (type png)
 <use adjunta1.png>
-Package pdftex.def Info: adjunta1.png  used on input line 140.
-(pdftex.def)             Requested size: 284.52756pt x 288.46468pt.
-<adjunta2.png, id=16, 264.99pt x 222.07968pt>
+Package pdftex.def Info: adjunta1.png  used on input line 154.
+(pdftex.def)             Requested size: 199.16928pt x 222.2136pt.
+<adjunta2.png, id=23, 273.27094pt x 304.88907pt>
 File: adjunta2.png Graphic file (type png)
 <use adjunta2.png>
-Package pdftex.def Info: adjunta2.png  used on input line 141.
-(pdftex.def)             Requested size: 284.52756pt x 238.47006pt.
-[3]
-
-LaTeX Warning: Text page 4 contains only floats.
-
-
-Overfull \vbox (3.93474pt too high) has occurred while \output is active []
-
-
-[4 <./adjunta1.png> <./adjunta2.png>]
-Overfull \hbox (22.38286pt too wide) detected at line 164
+Package pdftex.def Info: adjunta2.png  used on input line 155.
+(pdftex.def)             Requested size: 199.16928pt x 222.2136pt.
+ [4 <./adjunta1.png> <./adjunta2.png>]
+Overfull \hbox (22.38286pt too wide) detected at line 179
 [] \OT1/cmr/m/n/10 = [] []
  []
 
-[5]
-Overfull \hbox (30.7201pt too wide) detected at line 280
-\OML/cmm/m/it/10 x \OT1/cmr/m/n/10 = 40[]\OML/cmm/m/it/10 ;  y \OT1/cmr/m/n/10 
-= 30[]\OML/cmm/m/it/10 ;  z \OT1/cmr/m/n/10 = 88[]\OML/cmm/m/it/10 :
- []
-
-
-Overfull \hbox (7.36171pt too wide) in paragraph at lines 289--290
+[5] [6]
+Overfull \hbox (7.36171pt too wide) in paragraph at lines 337--338
 \OT1/cmr/m/n/10 temas de ecua-ciones y op-ti-mizaci^^Son lin-eal de-mues-tra se
 r una her-ramienta poderosa
  []
 
-[6] [7] (Mezcla de Combustibles para la reduccion de costos y de emiciones.aux)
+[7] (Mezcla de Combustibles para la reduccion de costos y de emiciones.aux)
  ***********
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-01-04>
@@ -275,8 +256,8 @@ L3 programming layer <2024-01-04>
  ) 
 Here is how much of TeX's memory you used:
  2704 strings out of 474486
- 45090 string characters out of 5744226
- 1941542 words of memory out of 5000000
+ 45082 string characters out of 5744226
+ 1937542 words of memory out of 5000000
  24970 multiletter control sequences out of 15000+600000
  563787 words of font info for 56 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
@@ -287,17 +268,19 @@ Here is how much of TeX's memory you used:
 amsfonts/cm/cmbx12.pfb><C:/Users/A320/AppData/Local/Programs/MiKTeX/fonts/type1
 /public/amsfonts/cm/cmex10.pfb><C:/Users/A320/AppData/Local/Programs/MiKTeX/fon
 ts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Users/A320/AppData/Local/Programs/Mi
-KTeX/fonts/type1/public/amsfonts/cm/cmmi7.pfb><C:/Users/A320/AppData/Local/Prog
-rams/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/A320/AppData/Loc
-al/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr17.pfb><C:/Users/A320/AppD
-ata/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr7.pfb><C:/Users/A32
-0/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/U
-sers/A320/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy7.pf
-b>
+KTeX/fonts/type1/public/amsfonts/cm/cmmi12.pfb><C:/Users/A320/AppData/Local/Pro
+grams/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi7.pfb><C:/Users/A320/AppData/Lo
+cal/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/A320/App
+Data/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr17.pfb><C:/Users/A
+320/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr7.pfb><C:/U
+sers/A320/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr8.pfb
+><C:/Users/A320/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cm
+sy10.pfb><C:/Users/A320/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfon
+ts/cm/cmsy7.pfb>
 Output written on "Mezcla de Combustibles para la reduccion de costos y de emic
-iones.pdf" (7 pages, 151982 bytes).
+iones.pdf" (7 pages, 175909 bytes).
 PDF statistics:
- 87 PDF objects out of 1000 (max. 8388607)
+ 97 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  11 words of extra memory for PDF output out of 10000 (max. 10000000)
 
